@@ -74,7 +74,8 @@ require("lazy").setup({
         return
       end
       configs.setup({
-        ensure_installed = { "lua", "vim", "vimdoc", "javascript", "typescript", "vue", "css", "html", "rust", "c_sharp", "java" },
+        -- Java 暫停使用：原本清單末尾還有 "java" parser
+        ensure_installed = { "lua", "vim", "vimdoc", "javascript", "typescript", "vue", "css", "html", "rust", "c_sharp" --[[, "java" ]] },
         highlight = {
           enable = true,
           additional_vim_regex_highlighting = false,
@@ -496,6 +497,7 @@ require("lazy").setup({
       vim.keymap.set("n", "<leader>gc", ":DiffviewClose<CR>", { desc = "關閉 Diffview", silent = true })
     end
   },
+  -- Java 暫停使用：nvim-jdtls (podman 容器內的 Java LSP) 整段註解
   -- -- augment code
   -- {
   --   "mfussenegger/nvim-jdtls",
